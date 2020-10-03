@@ -1,0 +1,17 @@
+//Attempt two; more efficient still lacking memory efficiency
+
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+       if(nums.size() <= 1)
+           return nums.size();
+        
+        int size = 0;        
+        for(int i = 1; i < nums.size(); ++i){
+            if(nums[i] != nums[size]){
+                nums[++size] = nums[i];   
+            }
+        }    
+            return size + 1;
+    }
+};
